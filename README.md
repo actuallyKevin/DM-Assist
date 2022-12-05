@@ -7,9 +7,9 @@ Objectives of this app:
 
     2. Create functionality for DMs to generate random NPCs complete with names, race, occupation, disposition, quirks etc using Name APIs and my DataBase
 
-    3. Handy extra tools on each page for rolling dice
+    3. Handy extra tools on each page for rolling dice, tracking initiative, etc
 
     STRETCH GOALS:
         1. Incorporate an encounter calculator using the formulas in the Dungeon Master's guide.
 
-        2. Incorporate an iniative roller and tracker.
+        2. Incorporate a 3rd API (Noun Project?) to generate random icons as story hooks. (See "StoryTeller's Dice")
