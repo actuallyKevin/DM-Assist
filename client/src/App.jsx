@@ -8,9 +8,9 @@ function App() {
 
   //! getSpell function makes api call and returns the Name of one spell selected at random.
   async function getSpell(){
-    let randomNumber = Math.floor(Math.random()*320)
+    let randomNumber = Math.floor(Math.random()*363)
     try {
-    const response = await axios.get('https://www.dnd5eapi.co/api/spells/')
+    const response = await axios.get('https://www.dnd5eapi.co/api/magic-items/')
     console.log(response);
     setSpell(response.data.results[randomNumber].name)
     } catch (error) {
