@@ -1,47 +1,50 @@
-import Nav from 'react-bootstrap/Nav'
-import Navbar from 'react-bootstrap/Navbar'
-import NavItem from 'react-bootstrap/NavItem'
-import NavDropdown from 'react-bootstrap/NavDropdown'
-import Dropdown from 'react-bootstrap/Dropdown'
-import {Link} from 'react-router-dom'
+import React from 'react'
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import {Routes, Route, Link} from "react-router-dom"
+import Home from '/src/pages/Home'
+import SignIn from '/src/pages/SignIn'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios'
 
+export default function AppNav() {
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
 
+    const signOut = async () => {
+        axios.defaults.headers.common['X-CSRFToken'] = getCookie('csrftoken')
+        let myResponse = await axios.post('signOut/')
+        console.log(myResponse.data)
+      }
 
-const AppNav = () => {
- (<div></div>
-
-        // <Navbar>
-        //     <Nav>
-        //         <Nav.Link href="/#/signUp">Sign Up</Nav.Link>
-        //         <Nav.Link href="/#/signIn">Sign In</Nav.Link>
-        //         <Nav.Link href="/#/Loot">Loot Hoard Generator</Nav.Link>
-        //         <Nav.Link href="/#/NPC">NPC Generator</Nav.Link>
-        //     </Nav>
-        // </Navbar>
-
-//         <Navbar>
-//   <Navbar.Header>
-//     <Navbar.Brand>
-//       <a href="/">DM Assist</a>
-//     </Navbar.Brand>
-//   </Navbar.Header>
-//   <Nav>
-//     <NavItem eventKey={1}> 
-//      <Link to={"/#/signIn"}> Sign Up</Link>
-//     </NavItem>
-//     <NavItem eventKey={1}> 
-//      <Link to={"/#/signIn"}> Sign In</Link>
-//     </NavItem>
-
-//     <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-//       <Dropdown.Item eventKey={3.1}>Treasure Generator</Dropdown.Item>
-//       <Dropdown.Item eventKey={3.2}>NPC Generator</Dropdown.Item>
-//       <Dropdown.Item eventKey={3.3}>Story Hook Generator</Dropdown.Item>
-//     </NavDropdown>
-//   </Nav>
-// </Navbar>
-    )
-}
-
-export default AppNav 
-
+  return (
+    <>
+      <Navbar bg="dark" variant="dark">
+        <Container>
+          <Navbar.Brand href="/">DM Assist</Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link><Link to='/signin'>Sign In</Link></Nav.Link>
+            <Nav.Link><Link to='/treasure-gen'>Treasure Generator</Link></Nav.Link>
+            <Nav.Link href="#pricing">Pricing</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+      <button onClick={signOut}>Log Out</button>
+      <br />
+    </>
+  )
+  }
