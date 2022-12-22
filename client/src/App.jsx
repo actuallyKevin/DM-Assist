@@ -8,25 +8,14 @@ import Home from './pages/Home'
 import {Routes, Route, Link} from "react-router-dom"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import TreasureHoard from './pages/TreasureHoard'
+import Spells from './pages/Spells'
 
 function App() {
-  const [spell, setSpell] = useState('')
-  const [spellDetail, setSpellDetail] = useState('')
+  
   const [user, setUser] = useState(null)
 
 
-  //! getSpell function makes api call and returns the Name of one spell selected at random.
-  async function getSpell(){
-    let randomNumber = Math.floor(Math.random()*320)
-    try {
-    const response = await axios.get('https://www.dnd5eapi.co/api/spells/')
-    console.log(response);
-    setSpell(response.data.results[randomNumber].name)
-    } catch (error) {
-      console.error(error);
-    }
 
-  }
 
 
   // const curr_user = async () => {
@@ -47,14 +36,8 @@ function App() {
         <Route path="/signin" element={<SignIn />}/>
         <Route path="/signup" element={<SignUp />}/>
         <Route path="/treasure-gen" element={<TreasureHoard />}/>
+        <Route path="/spells" element={<Spells />}/>
       </Routes>
-      <div className="card">
-        <button onClick={getSpell}>
-          Get Spell
-        </button>
-        <h3>{spell}</h3>
-        <p>{spellDetail}</p>
-      </div>
     </div>
   )
 }

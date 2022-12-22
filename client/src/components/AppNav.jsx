@@ -39,7 +39,7 @@ export default function AppNav() {
           <Nav className="me-auto">
             <Nav.Link><Link to='/signin'>Sign In</Link></Nav.Link>
             <Nav.Link><Link to='/treasure-gen'>Treasure Generator</Link></Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link><Link to='/spells'>Spells</Link> </Nav.Link>
           </Nav>
         </Container>
       </Navbar>
