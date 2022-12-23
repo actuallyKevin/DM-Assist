@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import {useState} from 'react'
 import RandoSpellByLevel from '../components/RandoSpellByLevel'
+import SpellBook from '../components/SpellBook'
 
 export default function Spells() {
     const [spell, setSpell] = useState('')
@@ -24,12 +25,8 @@ export default function Spells() {
             <RandoSpellByLevel />
         </div>
         <div>
-        <button onClick={getSpell}>
-          Get Random Spell
-        </button>
-        <h3>{spell}</h3>
-        <p>{spellDetail}</p>
-      </div>
+            <SpellBook />
+        </div>
     </div>
   )
 }

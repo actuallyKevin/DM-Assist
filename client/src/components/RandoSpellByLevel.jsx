@@ -4,6 +4,7 @@ import axios from 'axios'
 
 export default function RandoSpellByLevel() {
 const [spell, setSpell] = useState('')
+const [spellDetail, setSpellDetail] = useState('')
 
 async function getSpellByLevel(){
     const level = document.getElementById("rando_spell_by_level").value
@@ -12,6 +13,8 @@ async function getSpellByLevel(){
     const count = spellList.data.count
     const randomNumber = Math.floor(Math.random()*count)
     const finalSpell = spellList.data.results[randomNumber].name
+    const finalSpellDetail = await axios.get(`https://www.dnd5eapi.co${spellList.data.results[randomNumber].url}`)
+    setSpellDetail(finalSpellDetail.data.desc)
     setSpell(finalSpell)
 
 }
@@ -32,6 +35,7 @@ async function getSpellByLevel(){
       </select>
       <button onClick={getSpellByLevel}>Get Spell</button>
       <h4>{spell}</h4>
+      <p>{spellDetail}</p>
     </div>
   )
 }
