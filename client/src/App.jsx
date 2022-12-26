@@ -9,6 +9,7 @@ import {Routes, Route, Link} from "react-router-dom"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import TreasureHoard from './pages/TreasureHoard'
 import Spells from './pages/Spells'
+import StoryHooks from './pages/StoryHooks'
 
 function App() {
   
@@ -37,6 +38,7 @@ function App() {
         <Route path="/signup" element={<SignUp />}/>
         <Route path="/treasure-gen" element={<TreasureHoard />}/>
         <Route path="/spells" element={<Spells />}/>
+        <Route path="/story-hooks" element={<StoryHooks />}/>
       </Routes>
     </div>
   )

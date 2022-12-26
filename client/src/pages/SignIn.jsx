@@ -29,9 +29,7 @@ export default function SignIn() {
       axios.defaults.headers.common['X-CSRFToken'] = getCookie('csrftoken')
       let username = document.getElementById("username_in").value
       let password = document.getElementById("password_in").value
-      console.log('\n\n\n\n')
-      console.log(username, password)
-      let myResponse = await axios.post('/api/signIn/',{
+      let myResponse = await axios.post('api/signIn/',{
         'username': username,
         'password': password
       })

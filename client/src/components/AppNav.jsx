@@ -40,10 +40,12 @@ export default function AppNav() {
             <Nav.Link><Link to='/signin'>Sign In</Link></Nav.Link>
             <Nav.Link><Link to='/treasure-gen'>Treasure Generator</Link></Nav.Link>
             <Nav.Link><Link to='/spells'>Spells</Link> </Nav.Link>
+            <Nav.Link><Link to='/story-hooks'>Story Prompts</Link></Nav.Link>
           </Nav>
+          <button onClick={signOut}>Log Out</button>
         </Container>
       </Navbar>
-      <button onClick={signOut}>Log Out</button>
+      
       <br />
     </>
   )
