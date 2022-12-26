@@ -13,7 +13,7 @@ import StoryHooks from './pages/StoryHooks'
 
 function App() {
   
-  const [user, setUser] = useState(null)
+  // const [user, setUser] = useState(null)
 
 
 
@@ -22,7 +22,8 @@ function App() {
   // const curr_user = async () => {
   //   let myResponse = await axios.get('current_user/')
   //   let user = myResponse.data && myResponse.data[0] && myResponse.data[0].fields
-  //   setUser(user)
+  //   console.log(user.username)
+  //   setUser(user.username)
   // }
 
   // useEffect(() => {

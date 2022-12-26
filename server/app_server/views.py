@@ -10,6 +10,7 @@ import os
 import requests
 from random import randint
 import pprint
+import asyncio
 
 pp = pprint.PrettyPrinter(indent=2, depth=3)
 load_dotenv()
@@ -83,17 +84,3 @@ def get_icons(request):
         icons_list.update({f'url{i}':url})
         i += 1
     return JsonResponse({'icons':icons_list})
-    # print('START HERE')
-    # print(request)
-    # print(request.data)
-    # auth = OAuth1(os.getenv("API_KEY"), os.getenv("SECRET_KEY"))
-    # print('AUTH FIRED')
-    # endpoint = 'https://api.thenounproject.com/icon/5'
-    # response = HTTP_Client.get(endpoint, auth=auth)
-    # response_json = response.json()
-    # print('RESPONSE-JSON', response_json)
-    # print('\n\n\n')
-    # print('RESPONSE PLAIN', response)
-    # url = response_json['icon']['preview_url']
-    # data = {'image_url': url}
-    # return JsonResponse(data)

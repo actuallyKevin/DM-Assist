@@ -26,14 +26,14 @@ export default function Treasure(props) {
     // }
 
     const showLoot = displayTreasure.map(item => 
-    <li onClick={async (event) =>{
+    <div id="show-loot" onClick={async (event) =>{
         event.preventDefault
         let detail = await axios.get(`https://www.dnd5eapi.co${item.url}`)
         console.log(detail, 'DETAIL')
         setItemDetail(detail.data.desc)
     }}>
         {item.name}
-    </li>);
+    </div>);
 
 
     // const showDetail =
