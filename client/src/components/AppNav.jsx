@@ -32,11 +32,11 @@ export default function AppNav() {
       }
 
   return (
-    <>
+    <div class='sticky-top'>
       <Navbar bg="dark" variant="dark">
         <Container>
           <Navbar.Brand href="/">DM Assist</Navbar.Brand>
-          <Nav className="me-auto">
+          <Nav>
             <Nav.Link><Link to='/signin'>Sign In</Link></Nav.Link>
             <Nav.Link><Link to='/treasure-gen'>Treasure Generator</Link></Nav.Link>
             <Nav.Link><Link to='/spells'>Spells</Link> </Nav.Link>
@@ -47,6 +47,6 @@ export default function AppNav() {
       </Navbar>
       
       <br />
-    </>
+    </div>
   )
   }

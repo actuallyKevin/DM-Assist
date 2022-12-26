@@ -37,6 +37,7 @@ export default function StoryHooks() {
     <div>
       <h4>Noun Project Icons as storytellers dice here</h4>
       <button onClick={getIcons}>Generate Story Hooks</button>
+      <br></br>
       <div>{showIcons}</div>
     </div>
   )
