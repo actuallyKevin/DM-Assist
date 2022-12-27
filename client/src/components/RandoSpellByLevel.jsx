@@ -34,8 +34,10 @@ async function getSpellByLevel(){
         <option value={9}>Level 9</option>
       </select>
       <button onClick={getSpellByLevel}>Get Spell</button>
-      <h4>{spell}</h4>
+     <div id='show-detail'>
+        <h4>{spell}</h4>
       <p>{spellDetail}</p>
+      </div>
     </div>
   )
 }

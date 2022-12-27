@@ -31,12 +31,15 @@ export default function StoryHooks() {
 }
 
     const showIcons = icons.map(icon =>
-        <img src={icon}></img>)
+        <img id='icon' src={icon}></img>)
 
   return (
     <div>
-      <h4>Noun Project Icons as storytellers dice here</h4>
-      <button onClick={getIcons}>Generate Story Hooks</button>
+        <div id='show-detail'>
+      <h4>Story Prompts</h4>
+      <p>Dungeon Master's block got you down? Let Story Prompts inspire you. The three icons can be interpreted hundreds of different ways!</p>
+      </div>
+      <button onClick={getIcons}>Generate Story Prompts</button>
       <br></br>
       <div>{showIcons}</div>
     </div>

@@ -26,7 +26,7 @@ export default function Treasure(props) {
     // }
 
     const showLoot = displayTreasure.map(item => 
-    <div id="show-loot" onClick={async (event) =>{
+    <div id="show-detail" onClick={async (event) =>{
         event.preventDefault
         let detail = await axios.get(`https://www.dnd5eapi.co${item.url}`)
         console.log(detail, 'DETAIL')
@@ -55,7 +55,7 @@ export default function Treasure(props) {
         </select>
         <button onClick={randomItems}>Roll for treasure!</button>
         <ul>{showLoot}</ul>
-        <div id='item_detail'>
+        <div id='show-detail'>
             {itemDetail}
         </div>
     </div>

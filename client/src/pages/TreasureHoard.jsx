@@ -17,7 +17,7 @@ export default function TreasureHoard() {
 
   return (
     <div>
-        <h3>Treasure Generator</h3>
+        <h3 id='show-detail'>Treasure Generator</h3>
         <Treasure treasureTable={treasureTable}/>
     </div>
   )

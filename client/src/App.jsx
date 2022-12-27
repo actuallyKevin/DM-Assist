@@ -10,26 +10,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import TreasureHoard from './pages/TreasureHoard'
 import Spells from './pages/Spells'
 import StoryHooks from './pages/StoryHooks'
-
 function App() {
   
-  // const [user, setUser] = useState(null)
-
-
-
-
-
-  // const curr_user = async () => {
-  //   let myResponse = await axios.get('current_user/')
-  //   let user = myResponse.data && myResponse.data[0] && myResponse.data[0].fields
-  //   console.log(user.username)
-  //   setUser(user.username)
-  // }
-
-  // useEffect(() => {
-  //   curr_user()
-  // },[])
-
   return (
     <div className="App">
         <AppNav />

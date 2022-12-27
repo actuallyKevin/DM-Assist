@@ -1,7 +1,6 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
 import axios from 'axios'
-import { useResolvedPath } from 'react-router-dom'
 import logo from '../assets/d20.jpg'
 
 
@@ -23,7 +22,7 @@ export default function Home() {
     <div>
         <h5>Welcome {user}!</h5>
       <img src={logo} alt='d20'></img>
-      <p>This application is here to simplify your planning and running of D&D 5e adventures.</p>
+      <p>This application is here to simplify planning and running D&D 5e adventures.</p>
     </div>
   )
 }

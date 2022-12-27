@@ -76,3 +76,23 @@ button:focus-visible {
   left: 0;
   right: 0;
 }
+
+#show-detail {
+  font-family: luminari;
+}
+
+#left-align{
+  float: left;
+  width: 50%;
+  padding-top: 50px;
+}
+
+#right-align{
+  float: right;
+  width: 50%;
+  padding-top: 50px;
+}
+#icon {
+  margin: 10px;
+  padding: 10px;
+}

@@ -57,8 +57,7 @@ export default function SignIn() {
         <p>Don't have an account? <Link to={"/signup"}>Sign Up!</Link></p>
       <form>
         <input type="text" id="username_in" placeholder="Username"></input>
-        <input type="text" id="password_in" placeholder="Password"></input>
-        {/* change input type to PASSWORD */}
+        <input type="password" id="password_in" placeholder="Password"></input>
         <button onClick={(e)=> { 
         e.preventDefault()
         setLogInLoading(true)

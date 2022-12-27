@@ -220,14 +220,14 @@ export default function SpellBook() {
     }
 
     const showSpellBook = displaySpellBook.map(spell =>
-        <li onClick={async (e) =>{
+        <div id='show-detail' onClick={async (e) =>{
             e.preventDefault
             let detail = await axios.get(`https://www.dnd5eapi.co${spell.url}`)
             console.log(detail, 'spell detail')
             setSpellDetail(detail.data.desc)
         }}>
             {spell.name}
-        </li>);
+        </div>);
 
   return (
     <div>
@@ -239,7 +239,7 @@ export default function SpellBook() {
       </select>
       <button onClick={getSpellBook}>Generate SpellBook</button>
       <ul>{showSpellBook}</ul>
-      <div>{spellDetail}</div>
+      <div id='show-detail'>{spellDetail}</div>
     </div>
   )
 }
